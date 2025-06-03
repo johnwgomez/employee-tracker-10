@@ -7,8 +7,7 @@ import {
   addRole,
   addEmployee,
   updateEmployeeRole,
-} from './db/queries.js';
-import consoleTable from 'console.table';
+} from './db/queries';
 
 export async function mainMenu() {
   const { action } = await inquirer.prompt([
@@ -61,17 +60,20 @@ export async function mainMenu() {
       console.log(`Added role: ${title}`);
       break;
     }
-    case 'Add an Employee': {
-      const { firstName, lastName, roleId, managerId } = await inquirer.prompt([
-        { type: 'input', name: 'firstName', message: 'Enter first name:' },
-        { type: 'input', name: 'lastName', message: 'Enter last name:' },
-        { type: 'number', name: 'roleId', message: 'Enter role ID:' },
-        { type: 'number', name: 'managerId', message: 'Enter manager ID (or leave blank):', default: null },
-      ]);
-      await addEmployee(firstName, lastName, roleId, managerId || null);
-      console.log(`Added employee: ${firstName} ${lastName}`);
-      break;
-    }
+case 'Add an Employee': {
+  const { firstName, lastName, roleId, managerId } = await inquirer.prompt([
+    { type: 'input', name: 'firstName', message: 'Enter first name:' },
+    { type: 'input', name: 'lastName', message: 'Enter last name:' },
+    { type: 'number', name: 'roleId', message: 'Enter role ID:' },
+    { type: 'input', name: 'managerId', message: 'Enter manager ID (or leave blank):' },
+  ]);
+
+  const parsedManagerId = managerId === '' ? null : Number(managerId);
+
+  await addEmployee(firstName, lastName, roleId, parsedManagerId);
+  console.log(`Added employee: ${firstName} ${lastName}`);
+  break;
+}
     case 'Update an Employee Role': {
       const { employeeId, newRoleId } = await inquirer.prompt([
         { type: 'number', name: 'employeeId', message: 'Enter employee ID to update:' },

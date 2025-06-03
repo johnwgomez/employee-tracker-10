@@ -1,0 +1,34 @@
+{
+  "name": "employee-tracker-10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnwgomez/employee-tracker-10.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/johnwgomez/employee-tracker-10/issues"
+  },
+  "homepage": "https://github.com/johnwgomez/employee-tracker-10#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^16.5.0",
+    "inquirer": "^12.6.3",
+    "pg": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.8",
+    "@types/node": "^22.15.29",
+    "@types/pg": "^8.15.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

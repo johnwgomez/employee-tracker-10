@@ -5,11 +5,11 @@ dotenv.config();
 const { Pool } = pkg;
 
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: Number(process.env.DB_PORT),
+  user: process.env.DB_USER || process.env.USER || 'postgres',
+  password: process.env.DB_PASSWORD !== undefined ? String(process.env.DB_PASSWORD) : '',
+  host: process.env.DB_HOST || 'localhost',
+  database: process.env.DB_NAME || 'employee_tracker',
+  port: Number(process.env.DB_PORT) || 5432,
 });
 
 export default pool;

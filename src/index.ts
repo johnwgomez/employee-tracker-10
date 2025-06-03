@@ -1,3 +1,3 @@
-import { mainMenu } from './menu.js';
+import { mainMenu } from './menu';
 
 mainMenu();

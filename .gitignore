@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# dotenv environment variables
+.env
+
+# Compiled output
+dist/
+build/
+
+# TypeScript
+*.tsbuildinfo
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# PostgreSQL socket files (optional, local use)
+*.s.PGSQL.*
+
+# Coverage/testing (if added later)
+coverage/
